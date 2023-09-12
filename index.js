@@ -1,6 +1,8 @@
+require('dotenv').config()
+
 const express = require("express");
 const cors = require("cors");
-const port = 4000
+const port = process.env.PORT || 4000;
 const { v4: uuid } = require("uuid")
 const pool = require('./db');
 
@@ -8,7 +10,7 @@ const pool = require('./db');
 const app = express();
 
 app.get("/", (req, res)=>{
-    res.send("WORKIN........")
+    res.send(`Welcome...${process.env.MESSAGE}`)
 })
 
 
